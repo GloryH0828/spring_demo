@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress SpringXmlModelInspection -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+    <bean id="a" class="com.gloryh.entity.Car" >
+        <property name="id" value="1"></property>
+        <property name="name" value="宝马"></property>
+    </bean>
+
+    <bean id="person" class="com.gloryh.entity.Person" autowire="byType">
+        <property name="name" value="张三"></property>
+        <property name="id" value="11"></property>
+    </bean>
+</beans>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress SpringXmlModelInspection -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+    <!-- 配置静态工厂创建Car -->
+    <bean id="car" class="com.gloryh.factory.StaticCarFactory" factory-method="getCar">
+        <constructor-arg value="1"></constructor-arg>
+    </bean>
+
+    <!-- 配置实例工厂方法 -->
+    <!-- 第一步配置实例工厂 bean -->
+    <bean id="carFactory" class="com.gloryh.factory.InstanceCarFactory"></bean>
+    <!-- 第二步，配置实例工厂创建Car -->
+    <bean id="car2" factory-bean="carFactory" factory-method="getCar">
+        <constructor-arg value="1"></constructor-arg>
+    </bean>
+</beans>
